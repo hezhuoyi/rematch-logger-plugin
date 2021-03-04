@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -57,5 +57,9 @@
     "log",
     "plugin",
     "redux"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hezhuoyi/rematch-logger-plugin.git"
+  }
 }
