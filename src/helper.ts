@@ -3,7 +3,8 @@ import { LogConfig } from './index'
 const defaultConfig = {
     enable: true,
     duration: true,
-    timestamp: true
+    timestamp: true,
+    effects: false
 };
 
 export const mergeConfig = (options: LogConfig) => {
@@ -14,10 +15,10 @@ export const getCurrentState = (rematchStore: any, modelName: string) => {
     return rematchStore.getState()[modelName];
 };
 
-export function titleFormatter(options: LogConfig, modelName: string, time: string , took: number) {
-    const parts = ['state', `%c ${modelName}`];
+export function titleFormatter(options: LogConfig, modelName: string, time: string , took: number, isEffect: boolean) {
+    const parts = [isEffect ? 'effect' : 'state', `%c ${modelName}`];
     if (options.timestamp) parts.push(`%c @ ${time}`);
-    if (options.duration) parts.push(`%c (in ${took.toFixed(2)} ms)`);
+    if (options.duration && !isEffect) parts.push(`%c (in ${took} ms)`);
     return parts.join(' ');
 }
 

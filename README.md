@@ -42,6 +42,7 @@ const store = init({
   enable = true: Boolean, // enable print feature?
   duration = true: Boolean, // print the duration?
   timestamp = true: Boolean, // print the timestamp?
+  effects = false: Boolean, //  print the effects actions?
 }
 ```
 
